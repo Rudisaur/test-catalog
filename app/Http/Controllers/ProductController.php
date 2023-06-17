@@ -2,15 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\CreateProduct;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ProductController extends Controller
 {
-    public function createProduct(CreateProduct $request)
+    public function store(Request $request): View
     {
-        Product::query()->create($request-validated());
+        $file = $request->file('image');
+        $filePath = $file->store('images');
+        $name = $request->input('name');
+        $price = $request->input('price');
+
+        Product::query()->create([
+            ...compact('name', 'price'),
+            'link_to_image' => $filePath,
+        ]);
+
+        return view('product-success-store', compact('name', 'price'));
+    }
+
+    public function index()
+    {
+
     }
 }

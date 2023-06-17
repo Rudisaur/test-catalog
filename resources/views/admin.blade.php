@@ -15,43 +15,36 @@
             justify-content: center;
             height: 100vh;
         }
-        .product-label {
-            font-size: medium;
-        }
+
+
         .centered-form * {
             height: 30px;
-            width: 200px;
-            margin-bottom: 10px;
-            font-size: medium;
+            width: 300px;
+            margin-bottom: 30px;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
 <div class="centered-form">
-    <form method="POST" action="/store" enctype="multipart/form-data">
+    <form method="POST" action="/products" enctype="multipart/form-data">
         @csrf
 
         <div>
-            <label class="product-label" for="name">Название товара</label>
-        </div>
-
-        <div>
+            <label for="name">Название товара</label>
+        <br/>
             <input type="text" name="name" id="name" placeholder="Введите название товара" required>
         </div>
 
         <div>
-            <label class="product-label" for="price">Цена товара</label>
-        </div>
-
-        <div>
+            <label for="price">Цена товара</label>
+            <br/>
             <input type="number" name="price" id="price" placeholder="Введите цену товара" required>
         </div>
 
         <div>
-            <label class="product-label" for="image">Загрузить картинку</label>
-        </div>
-
-        <div>
+            <label for="image">Загрузить картинку</label>
+            <br/>
             <input type="file" name="image" id="image" required>
         </div>
 
