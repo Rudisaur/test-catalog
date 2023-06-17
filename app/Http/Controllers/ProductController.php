@@ -25,6 +25,8 @@ class ProductController extends Controller
 
     public function index()
     {
+        $products = Product::query()->latest()->take(5)->get()->toArray();
 
+        return view('catalog', compact('products'));
     }
 }

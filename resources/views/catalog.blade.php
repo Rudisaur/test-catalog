@@ -9,6 +9,16 @@
 
 </head>
 <body>
+<div>
+    @foreach ($products as $item)
+        <div>
+            <h2>{{ $item['name'] }}</h2>
 
+            <p>{{ $item['price'] }}</p>
+            <img src="{{ asset('storage/' . $item['link_to_image']) }}" alt="Изображение товара">
+        </div>
+    @endforeach
+
+</div>
 </body>
 </html>
