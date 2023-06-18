@@ -43,7 +43,7 @@
         </div>
 
         <div>
-            <label for="image">Загрузить картинку</label>
+            <label for="image">Фото товара</label>
             <br/>
             <input type="file" name="image" id="image" required>
         </div>
