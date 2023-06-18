@@ -37,7 +37,7 @@
         </div>
 
         <div>
-            <label for="price">Цена товара</label>
+            <label for="price">Цена товара в тенге</label>
             <br/>
             <input type="number" name="price" id="price" placeholder="Введите цену товара" required>
         </div>
