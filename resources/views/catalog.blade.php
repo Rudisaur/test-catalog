@@ -13,7 +13,7 @@
         }
 
         .image {
-            width: 100%;
+            width: 400px;
             height: auto;
         }
 
@@ -30,7 +30,7 @@
         <div class="product">
             <h2>{{ $item['name'] }}</h2>
             <h3>Цена: {{ $item['price'] }} ₸</h3>
-            <img class="image" src="{{ asset('storage/' . $item['link_to_image']) }}" alt="Изображение товара">
+            <img class="image" src="{{ asset($item['link_to_image']) }}" alt="Изображение товара">
         </div>
     @endforeach
 </div>
